@@ -1,5 +1,4 @@
-# SecurityHelper
-module SecurityHelper
+module SessionHelper
   def sign_in(user)
     session[:user_id] = user.id
   end
@@ -13,10 +12,11 @@ module SecurityHelper
   end
 
   def authenticate_user!
-    redirect_to login_path unless authenticated?
+    redirect_to signin_path unless authenticated?
   end
 
   def current_user
+    return session[:user_id].nil?
     @current_user ||= User.find_by(id: session[:user_id])
   end
 

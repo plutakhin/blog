@@ -13,7 +13,7 @@ Things you may want to cover:
 
 * Database creation
 
-* Database initialization
+* Database initialization   
 
 * How to run the test suite
 
@@ -27,3 +27,8 @@ Things you may want to cover:
 
 * docker-compose up
 
+### Database upgrade
+
+```bash
+docker-compose run --rm web bin/rails db:setup
+```
